@@ -4,10 +4,10 @@ spring:
 server:
   port: 8082
 datasource:
-  url: jdbc:mysql://localhost:3306/iot_db?allowPublicKeyRetrieval=true&useSSL=false
+  url: ${datasource.url:jdbc:mysql://localhost:3306/iot_db?allowPublicKeyRetrieval=true&useSSL=false}
   driver-class-name: com.mysql.cj.jdbc.Driver
-  username: harbaoui
-  password: 12345678
+  username: ${datasource.username}
+  password: ${datasource.password}
   hikari:
     maximum-pool-size: 10
 jpa:
@@ -21,10 +21,10 @@ jpa:
 mail:
   host: smtp.gmail.com
   port: 587
-  username: medamineharbaoui1@gmail.com
-  password: kekr rtxr nnby rcwi
+  username: ${MAIL_USERNAME}
+  password: ${MAIL_PASSWORD}
   properties:
     mail.smtp.auth: true
     mail.smtp.starttls.enable: true
 jwt:
-  secret: MHJheDQ4cWxlNjVqYjVvYWF6cXRjbHRuNm5pMnd3d2k=
+  secret: ${JWT_SECRET}
