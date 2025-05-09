@@ -8,9 +8,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/your-github/config-repo  # (we’ll mock this for now)
-    profiles:
-      active: native
+          uri: https://github.com/medamineharbaoui/backend-iot.git
+          # If private repo, use environment variables
+          username: ${GIT_USERNAME}
+          password: ${GIT_PASSWORD}
 eureka:
   client:
     service-url:
